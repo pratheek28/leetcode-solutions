@@ -1,4 +1,4 @@
-// Last updated: 8/5/2026, 5:54:56 PM
+// Last updated: 8/5/2026, 6:29:00 PM
 1class Solution {
 2public:
 3    int candy(vector<int>& ratings) {
