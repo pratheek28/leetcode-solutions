@@ -1,17 +1,17 @@
-// Last updated: 7/25/2026, 7:29:29 PM
-class Solution {
-public:
-    int removeElement(vector<int>& nums, int val) {
-        int size = nums.size();
-        for (int i = 0; i < size; i++) {
-            if (nums.at(i) == val) {
-                for (int j = i + 1; j < size; j++) {
-                    nums.at(i) = nums.at(j);
-                }
-                size--;
-                i--;
-            }
-        }
-        return size;
-    }
-};
+// Last updated: 8/6/2026, 10:56:16 PM
+1class Solution {
+2public:
+3    int removeElement(vector<int>& nums, int val) {
+4        int size = nums.size();
+5        for (int i = 0; i < size; i++) {
+6            if (nums[i] == val) {
+7                for (int j = i + 1; j < size; j++) {
+8                    nums[i] = nums[j];
+9                }
+10                size--;
+11                i--;
+12            }
+13        }
+14        return size;
+15    }
+16};
