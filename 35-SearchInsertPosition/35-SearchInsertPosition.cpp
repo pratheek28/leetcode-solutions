@@ -1,21 +1,18 @@
-// Last updated: 7/25/2026, 7:29:25 PM
-class Solution {
-public:
-    int searchInsert(vector<int>& nums, int target) {
-        if (nums.at(nums.size() - 1) < target) {
-            return nums.size();
-        }
-        for (unsigned int i = 0; i + 1< nums.size(); i++) {
-            if (nums.at(i) < target && nums.at(i + 1) > target) {
-                return i + 1;
-            }
-            else if (nums.at(i) == target) {
-                return i;
-            }
-            else if (nums.at(i + 1) == target) {
-                return i + 1;
-            }
-        }
-        return 0;
-    }
-};
+// Last updated: 8/6/2026, 11:15:25 PM
+1class Solution {
+2public:
+3    int searchInsert(vector<int>& nums, int target) {
+4        int left = 0;
+5        int right = nums.size() - 1;
+6
+7        while (left <= right) {
+8            int mid = left + (right - left) / 2;
+9
+10            if (nums[mid] == target) return mid;
+11            else if(nums[mid] > target) right = mid - 1;
+12            else left = mid + 1;
+13        }
+14
+15        return left;
+16    }
+17};
