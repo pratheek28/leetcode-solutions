@@ -1,17 +1,43 @@
-// Last updated: 8/6/2026, 11:02:30 PM
-1class Solution {
-2public:
-3    int strStr(string haystack, string needle) {
-4        if (needle.size() > haystack.size()) return -1;
-5
-6        for (int i = 0; i <= haystack.size() - needle.size(); i++) {
-7            if (haystack[i] == needle[0]) {
-8                string str = haystack.substr(i, needle.size());
-9
-10                if (str == needle) return i;
-11            }
-12        }
-13        
-14        return -1;
-15    }
-16};
+// Last updated: 8/6/2026, 11:03:03 PM
+// class Solution {
+// public:
+//     int strStr(string haystack, string needle) {
+
+//         int n = haystack.length();
+//         int m = needle.length();
+
+//         for (int i = 0; i <= n - m; i++) {
+
+//             if (haystack.substr(i, m) == needle) {
+//                 return i;
+//             }
+//         }
+
+//         return -1;
+//     }
+// };
+
+
+class Solution {
+public:
+    int strStr(string haystack, string needle) {
+
+        int n = haystack.length();
+        int m = needle.length();
+
+        // Check every possible starting position
+        for (int i = 0; i <= n - m; i++) {
+
+            int j = 0;
+
+            while (j < m && haystack[i + j] == needle[j]) {
+                j++;
+            }
+
+            if (j == m)
+                return i;
+        }
+
+        return -1;
+    }
+};
