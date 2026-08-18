@@ -1,6 +1,6 @@
-// Last updated: 8/17/2026, 7:29:33 PM
+// Last updated: 8/17/2026, 7:30:14 PM
 1class Solution {
-2    int res = 0, empty = 1, sx, sy;
+2    int res = 0, empty = 1, startX, startY;
 3public:
 4    int uniquePathsIII(vector<vector<int>>& grid) {
 5        int m = grid.size(), n = grid[0].size();
@@ -9,13 +9,13 @@
 8            for (int j = 0; j < n; j++) {
 9                if (grid[i][j] == 0) empty++;
 10                else if (grid[i][j] == 1) {
-11                    sx = i;
-12                    sy = j;
+11                    startX = i;
+12                    startY = j;
 13                }
 14            }
 15        }
 16
-17        dfs(grid, sx, sy);
+17        dfs(grid, startX, startY);
 18        return res;
 19    }
 20
