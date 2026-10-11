@@ -1,4 +1,4 @@
-# Last updated: 10/11/2026, 10:29:58 AM
+# Last updated: 10/11/2026, 10:30:44 AM
 1# @param {String} s
 2# @return {Integer}
 3def length_of_longest_substring(s)
@@ -20,7 +20,10 @@
 19        end
 20        
 21        hi += 1
-22        res = [hi - lo, res].max
-23    end
-24    return res
-25end
+22
+23        if (hi - lo) > res
+24            res = hi - lo
+25        end
+26    end
+27    return res
+28end
